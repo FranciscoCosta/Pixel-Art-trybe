@@ -6,10 +6,13 @@ const geraGrelha = document.getElementById("generate-board");
 const linhas = document.getElementsByClassName("linha");
 const randomCor = document.getElementsByClassName("rad");
 const btnRan = document.getElementById("cores-random");
+const botaoRGB  = document.getElementById("rgb-botao");
+const rangeBtn  = document.getElementsByClassName("range");
 
 botaoLimpa.addEventListener("click", resta);
 geraGrelha.addEventListener("click", gerador);
 btnRan.addEventListener("click", coresAlt);
+botaoRGB.addEventListener("click",btnRbg);
 
 function gerador() {
   pegaValor();
@@ -23,6 +26,17 @@ function renova() {
   for (let i = 0; i < escolhefilhos.length; i += 1) {
     telaP.removeChild(escolhefilhos[i]);
   }
+}
+
+
+function btnRbg() {
+  const r = document.getElementById("red").value;
+  const g = document.getElementById("green").value;
+  const b = document.getElementById("blue").value;
+  coresR = "rgb" + "(" + r + ", " + g + ", " + b + ")";
+  window.cor2 = coresR;
+  rangeBtn[0].style.backgroundColor = window.cor2 ;
+  
 }
 
 function pegaValor() {
@@ -77,6 +91,7 @@ function escolhepixeis() {
 
 function escolheP() {
   this.style.backgroundColor = window.cor1;
+  console.log(window.cor1)
 }
 
 function resta() {
@@ -108,4 +123,5 @@ geraQuadrado(5);
 escolhepaleta();
 escolhepixeis();
 coresAlt();
+btnRbg();
 window.cor1 = "black"
