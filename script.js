@@ -28,7 +28,15 @@ function renova() {
 function pegaValor() {
   let j = document.getElementById("board-size").value;
   window.size = j;
+  console.log(window.size)
+  if(window.size===''){
+    alert("Board inválido!")
+  }
+  
 }
+
+
+
 
 function geraQuadrado(n) {
   if (window.size < 5) {
