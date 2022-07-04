@@ -44,31 +44,22 @@ body::-webkit-scrollbar {
   text-shadow: 0px 16px 28px rgba(0, 0, 0, 0.3);
 }
 .palet {
-  display: inline-block;
-  font-size: 0;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .dim {
   display: inline-block;
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   align-items: center;
-  font-size: 0;
   justify-content: center;
 }
 .black {
   background-color: black;
 }
-.red {
-  background-color: red;
-}
-.yellow {
-  background-color: yellow;
-}
-.blue{
-  background-color: blue;
-}
+
 .pixel-art {
   display: flex;
   align-items: center;
@@ -89,12 +80,19 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
+.color:hover {
+  width: 100px;
+  height: 100px;
+  transition: 0.2s;
+  border: 6px solid  #2fc18c;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.5);
+}
+
 .color {
-  display: inline-block;
-  border: 1px solid black;
+  border-radius: 100%;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   line-height: 0;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
@@ -105,6 +103,17 @@ body::-webkit-scrollbar {
 }
 #cores-random {
   width: 150px;
+}
+
+.selected,
+.selected:hover {
+  border: 6px solid #2EE59D;
+  transition: 0.2s;
+  width: 110px;
+  height: 110px;
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.6);
+  cursor: default;
 }
 .pixel {
   background-color: #fff;
@@ -152,8 +161,4 @@ button:hover {
     outline: none;
     text-align: center;
     }
-
-
-
-
 /* final */
